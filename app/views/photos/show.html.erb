@@ -1,0 +1,54 @@
+<div class="page-header">
+  <h1>Photo #<%= @photo.id %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Image url</dt>
+  <<dd><img src="<%= @photo.image_url %>" width="240"></dd>
+
+  <dt>Caption</dt>
+  <dd><%= @photo.caption %></dd>
+
+  <dt>User</dt>
+  <dd><%= @photo.user_id %></dd>
+
+</dl>
+
+<ul class="media-list">
+  <% @photo.comments.each do |comment| %>
+    <li class="media">
+      <a class="pull-left" href="#">
+        <img class="media-object" src="<%= current_user.avatar_url %>" alt="...">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading"><%= current_user.email %></h4>
+        <%= comment.content %>
+      </div>
+    </li>
+  <% end %>
+</ul>
+
+<form action="/create_comment" class="form-horizontal">
+  <!-- Label and input for content -->
+  <div class="form-group">
+    <label for="content" class="col-sm-2 control-label">
+      Content
+    </label>
+    <div class="col-sm-10">
+      <textarea id="content" name="content" placeholder="Content" class="form-control" rows="3"></textarea>
+    </div>
+  </div>
+
+  <!-- Label and input for picture_id -->
+  <div class="form-group">
+    <div class="col-sm-10">
+      <input type="hidden" id="photo_id" name="photo_id" placeholder="Picture" class="form-control" value="<%= @photo.id %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Create Comment" class="btn btn-primary">
+    </div>
+  </div>
+</form>
