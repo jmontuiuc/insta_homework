@@ -7,9 +7,9 @@
   <dd><%= @comment.content %></dd>
 
   <dt>Photo</dt>
-  <dd><%= @comment.photo_id %></dd>
+  <dd><img class="img-thumbnail" src="<%= @comment.photo.image_url %>" alt="..."></dd>
 
   <dt>User</dt>
-  <dd><%= @comment.user_id %></dd>
+  <dd><%= @comment.user.email %></dd>
 
 </dl>
