@@ -45,6 +45,10 @@ class PhotosController < ApplicationController
     end
   end
 
+  def favorite
+    # @photo = Photo.find(params[:id])
+  end
+
   def destroy
     @photo = Photo.find(params[:id])
 
@@ -57,3 +61,5 @@ end
   def wall
     @photo = Photo.find(params[:id])
   end
+
+
