@@ -53,3 +53,7 @@ class PhotosController < ApplicationController
     redirect_to "/photos", :notice => "Photo deleted."
   end
 end
+
+  def wall
+    @photo = Photo.find(params[:id])
+  end

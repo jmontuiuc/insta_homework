@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>Photos</h1>
+  <h1>My Wall</h1>
 </div>
 
 <p><a href="/photos/new" class="btn btn-primary">Add a New Photo</a></p>
@@ -17,7 +17,7 @@
   </thead>
 
   <tbody>
-    <% @photos.each do |photo| %>
+    <% current_user.photos.each do |photo| %>
       <tr>
         <td><img class="col-sm-4" src="<%= photo.image_url %>" alt="..."></td>
         <td><%= photo.caption %></td>
@@ -41,4 +41,3 @@
     <% end %>
   </tbody>
 </table>
-
