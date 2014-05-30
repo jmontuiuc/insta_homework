@@ -4,9 +4,9 @@
 
 <dl class="dl-horizontal">
   <dt>Photo</dt>
-  <dd><%= @favorite.photo_id %></dd>
+  <dd><img class="img-thumbnail" src="<%= @favorite.photo.image_url %>"></dd>
 
   <dt>User</dt>
-  <dd><%= @favorite.user_id %></dd>
+  <dd><%= @favorite.user.email %></dd>
 
 </dl>
