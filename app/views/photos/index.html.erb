@@ -19,9 +19,9 @@
   <tbody>
     <% @photos.each do |photo| %>
       <tr>
-        <td><%= photo.image_url %></td>
+        <td><img class="img-thumbnail" src="<%= photo.image_url %>" alt="..."></td>
         <td><%= photo.caption %></td>
-        <td><%= photo.user_id %></td>
+        <td><%= photo.user.email %></td>
         <td>
           <a href="/photos/<%= photo.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>

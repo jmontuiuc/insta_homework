@@ -18,10 +18,10 @@
   <% @photo.comments.each do |comment| %>
     <li class="media">
       <a class="pull-left" href="#">
-        <img class="media-object" src="<%= current_user.avatar_url %>" alt="...">
+        <img class="media-object" src="<%= comment.user.avatar_url%>" alt="...">
       </a>
       <div class="media-body">
-        <h4 class="media-heading"><%= current_user.email %></h4>
+        <h4 class="media-heading"><%= comment.user.email%></h4>
         <%= comment.content %>
       </div>
     </li>
